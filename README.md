@@ -1,13 +1,21 @@
+
+### 开发环境
+```
+系统: MacOSX 10.14.4
+语言: python 3.7.2
+protoc: libprotoc 3.7.1
+```
+
 ### 安装grpc
-python
+* python模块
 ```
 pip install grpcio
 ```
-依赖
+* 依赖
 ```
 pip install protobuf
 ```
-工具
+* 工具
 ```
 pip install grpcio-tools
 ```
@@ -39,7 +47,7 @@ python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. hello.proto
 2. 反序列化方法：`ParseFromString(msg: bytes)`
 
 #### 错误处理
-报错:
+* 报错:
 ```
 Traceback (most recent call last):
   File "server.py", line 7, in <module>
@@ -49,11 +57,11 @@ Traceback (most recent call last):
 lo.oneRequest\x1a\x12.hello.oneResponse\"\x00\x62\x06proto3')
 TypeError: __init__() got an unexpected keyword argument 'serialized_options'
 ```
-原因:
+* 原因:
 ```
 终端上的 protoc 版本 与python库内的protobuf版本不一样
 ```
-解决办法:
+* 解决办法:
 ```
 pip install -U protobuf
 ```
